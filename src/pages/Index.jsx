@@ -17,8 +17,9 @@ const Index = () => {
       <Flex justifyContent="space-between" alignItems="center" mb={10}>
         <Heading as="h1" size="xl">Cupcake Recipes</Heading>
         <Flex as="label" bg="gray.100" p="2" borderRadius="md">
+          // Note: The search operation is performed live as you type. The button is for visual feedback.
           <Input placeholder="Search recipes..." variant="unstyled" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
-          <Button colorScheme="pink" px="4">
+          <Button colorScheme="pink" px="4" onClick={() => console.log('Search triggered for:', searchQuery)}>
             <FaSearch />
           </Button>
         </Flex>
@@ -31,6 +32,9 @@ const Index = () => {
           </Box>
         ))}
       </SimpleGrid>
+      <Box as="footer" p={5} textAlign="center" borderTop="1px" borderColor="gray.200">
+        <Text>Explore More: <a href="#!">About Us</a> | <a href="#!">Contact</a> | <a href="#!">Terms of Service</a></Text>
+      </Box>
     </Box>
   );
 };
