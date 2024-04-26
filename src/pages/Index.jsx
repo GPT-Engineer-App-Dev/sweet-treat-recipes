@@ -19,7 +19,7 @@ const Index = () => {
         <Flex as="label" bg="gray.100" p="2" borderRadius="md">
           // Note: The search operation is performed live as you type. The button is for visual feedback.
           <Input placeholder="Search recipes..." variant="unstyled" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
-          <Button colorScheme="pink" px="4" onClick={() => console.log('Search triggered for:', searchQuery)}>
+          <Button colorScheme="pink" px="4" onClick={() => setSearchQuery(searchQuery.trim())}>
             <FaSearch />
           </Button>
         </Flex>
@@ -32,8 +32,9 @@ const Index = () => {
           </Box>
         ))}
       </SimpleGrid>
+      // Temporary alert functions for footer links. These should be replaced with actual navigation once the respective pages are developed.
       <Box as="footer" p={5} textAlign="center" borderTop="1px" borderColor="gray.200">
-        <Text>Explore More: <a href="#!">About Us</a> | <a href="#!">Contact</a> | <a href="#!">Terms of Service</a></Text>
+        <Text>Explore More: <a href="#!" onClick={() => alert('About Us page is under construction.')}>About Us</a> | <a href="#!" onClick={() => alert('Contact page is under construction.')}>Contact</a> | <a href="#!" onClick={() => alert('Terms of Service page is under construction.')}>Terms of Service</a></Text>
       </Box>
     </Box>
   );
